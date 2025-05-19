@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.edgecasedesigns.androidsampleapp.ui.components.LoadingScreen
 import com.example.composejsonviewer.data.model.Item
 
 @Composable
@@ -21,9 +22,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
     val isLoading = viewModel.isLoading
 
     if (isLoading) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            CircularProgressIndicator()
-        }
+        LoadingScreen()
     } else {
         LazyColumn {
             items(items) { item ->
