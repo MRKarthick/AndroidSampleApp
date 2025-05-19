@@ -8,6 +8,8 @@
 
     <!-- Splash screen theme -->
     <style name="Theme.AndroidSampleApp.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
         <!-- Background color for splash screen -->
         <item name="windowSplashScreenBackground">@color/catch_design_red</item>
 
