@@ -61,4 +61,5 @@ dependencies {
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.moshi.converter)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.google.material)
 }
