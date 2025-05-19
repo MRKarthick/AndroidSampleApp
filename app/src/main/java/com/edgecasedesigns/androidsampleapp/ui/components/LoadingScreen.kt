@@ -23,15 +23,7 @@ fun LoadingScreen() {
             .fillMaxSize()
             .background(CatchDesignRed)
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(120.dp)
-                .background(Color(0xFF060932)),
-            contentAlignment = Alignment.Center
-        ) {
-            LoadingIconLoop()
-        }
+        LoadingIndicator()
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -46,40 +38,3 @@ fun LoadingScreen() {
         }
     }
 }
-
-//*
-@Composable
-fun LoadingIconLoop() {
-    val vectorIds = listOf(
-        R.drawable.loader_1,
-        R.drawable.loader_2,
-        R.drawable.loader_3,
-        R.drawable.loader_4
-    )
-
-    val infiniteTransition = rememberInfiniteTransition()
-
-    val currentIndexFloat by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = (vectorIds.size - 1).toFloat(),
-        animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 500, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        )
-    )
-    val currentIndex = currentIndexFloat.toInt()
-
-    Box(modifier = Modifier.size(48.dp)) {
-        Image(
-            painter = painterResource(id = vectorIds[currentIndex]),
-            contentDescription = "Loading animation",
-            modifier = Modifier.fillMaxSize()
-        )
-    }
-}
-//*/
-
-
-/*
-
- */
