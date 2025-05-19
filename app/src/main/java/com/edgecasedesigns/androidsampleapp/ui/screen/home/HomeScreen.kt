@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.edgecasedesigns.androidsampleapp.ui.components.LoadingScreen
+import com.edgecasedesigns.androidsampleapp.ui.components.itemsWithDividers
 import com.example.composejsonviewer.data.model.Item
 
 @Composable
@@ -25,7 +26,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
         LoadingScreen()
     } else {
         LazyColumn {
-            items(items) { item ->
+            itemsWithDividers(items) { item ->
                 ListItem(item = item) {
                     navController.navigate("detail/${item.id}")
                 }
