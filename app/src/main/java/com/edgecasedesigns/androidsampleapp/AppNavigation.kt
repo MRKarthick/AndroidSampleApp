@@ -22,7 +22,7 @@ fun AppNavigation(modifier: Modifier = Modifier) {
             arguments = listOf(navArgument("id") { type = NavType.IntType })
         ) {
             val id = it.arguments?.getInt("id") ?: return@composable
-            DetailScreen(itemId = id)
+            DetailScreen(navController = navController, itemId = id)
         }
     }
 }
