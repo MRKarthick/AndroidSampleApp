@@ -18,38 +18,31 @@ import com.edgecasedesigns.androidsampleapp.ui.theme.CatchDesignRed
 
 @Composable
 fun LoadingScreen() {
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(CatchDesignRed)
     ) {
-        // Top colored rectangle bar
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(120.dp)
-                .background(Color(0xFF060932))
-                .align(Alignment.TopCenter),
+                .background(Color(0xFF060932)),
             contentAlignment = Alignment.Center
         ) {
             LoadingIconLoop()
         }
-
-        // Center column for logo and animated SVGs
-        Column(
+        Box(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 48.dp)
-                .background(CatchDesignRed),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxWidth()
+                .weight(1f), // This Box will take the remaining vertical space
+            contentAlignment = Alignment.Center
         ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "App Logo",
                 modifier = Modifier.size(132.dp, 60.dp)
             )
-
-            Spacer(modifier = Modifier.height(32.dp))
         }
     }
 }
@@ -70,7 +63,7 @@ fun LoadingIconLoop() {
         initialValue = 0f,
         targetValue = (vectorIds.size - 1).toFloat(),
         animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 800, easing = LinearEasing),
+            animation = tween(durationMillis = 500, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         )
     )
@@ -85,3 +78,8 @@ fun LoadingIconLoop() {
     }
 }
 //*/
+
+
+/*
+
+ */

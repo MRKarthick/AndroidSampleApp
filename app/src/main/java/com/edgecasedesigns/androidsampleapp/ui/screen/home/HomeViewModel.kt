@@ -20,7 +20,7 @@ class HomeViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 // I have explicitly added artificial delay of 1 second so that loading screen is shown.
-                delay(1000)
+                delay(2500)
 
                 items = repository.getItems()
             } catch (e: Exception) {
