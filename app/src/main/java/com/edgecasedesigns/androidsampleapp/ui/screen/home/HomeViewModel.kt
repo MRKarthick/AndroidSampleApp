@@ -15,13 +15,21 @@ class HomeViewModel : ViewModel() {
         private set
 
     var isLoading by mutableStateOf(true)
+        private set
 
     init {
+        loadItems()
+    }
+
+    fun refresh() {
+        loadItems()
+    }
+
+    private fun loadItems() {
+        isLoading = true
         viewModelScope.launch {
             try {
-                // I have explicitly added artificial delay of 1 second so that loading screen is shown.
-                delay(2500)
-
+                delay(2000) // I have delay for demoing the loading screen.
                 items = repository.getItems()
             } catch (e: Exception) {
                 e.printStackTrace()
