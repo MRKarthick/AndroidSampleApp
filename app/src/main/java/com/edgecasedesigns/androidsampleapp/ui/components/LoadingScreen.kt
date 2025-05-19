@@ -21,7 +21,6 @@ fun LoadingScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(CatchDesignRed)
     ) {
         // Top colored rectangle bar
         Box(
@@ -29,6 +28,8 @@ fun LoadingScreen() {
                 .fillMaxWidth()
                 .height(120.dp)
                 .background(Color(0xFF060932))
+                .align(Alignment.TopCenter),
+            contentAlignment = Alignment.Center
         ) {
             LoadingIconLoop()
         }
@@ -37,7 +38,8 @@ fun LoadingScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 48.dp),
+                .padding(top = 48.dp)
+                .background(CatchDesignRed),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -81,14 +83,5 @@ fun LoadingIconLoop() {
             modifier = Modifier.fillMaxSize()
         )
     }
-}
-
-@Composable
-fun SingleLoadingIcon() {
-    Image(
-        painter = painterResource(id = R.drawable.loader_1),
-        contentDescription = "Loading icon",
-        modifier = Modifier.size(48.dp)
-    )
 }
 //*/
