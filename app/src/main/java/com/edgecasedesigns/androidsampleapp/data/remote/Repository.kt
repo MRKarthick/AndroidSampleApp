@@ -1,4 +1,4 @@
-package com.example.composejsonviewer.data.remote
+package com.edgecasedesigns.androidsampleapp.data.remote
 
 class Repository {
     private val api = NetworkModule.api

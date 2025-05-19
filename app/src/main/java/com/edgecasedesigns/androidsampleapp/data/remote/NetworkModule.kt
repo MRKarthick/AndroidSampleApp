@@ -1,4 +1,4 @@
-package com.example.composejsonviewer.data.remote
+package com.edgecasedesigns.androidsampleapp.data.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory

@@ -1,4 +1,4 @@
-package com.example.composejsonviewer.ui.screen.detail
+package com.edgecasedesigns.androidsampleapp.ui.screen.detail
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composejsonviewer.ui.screen.home.HomeViewModel
+import com.edgecasedesigns.androidsampleapp.ui.screen.home.HomeViewModel
 
 @Composable
 fun DetailScreen(itemId: Int, viewModel: HomeViewModel = viewModel()) {

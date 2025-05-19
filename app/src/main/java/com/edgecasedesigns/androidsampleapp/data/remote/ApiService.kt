@@ -1,6 +1,6 @@
-package com.example.composejsonviewer.data.remote
+package com.edgecasedesigns.androidsampleapp.data.remote
 
-import com.example.composejsonviewer.data.model.Item
+import com.edgecasedesigns.androidsampleapp.data.model.Item
 import retrofit2.http.GET
 
 interface ApiService {

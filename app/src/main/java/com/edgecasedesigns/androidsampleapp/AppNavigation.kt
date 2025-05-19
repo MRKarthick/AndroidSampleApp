@@ -1,12 +1,12 @@
-package com.example.composejsonviewer
+package com.edgecasedesigns.androidsampleapp
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.example.composejsonviewer.ui.screen.detail.DetailScreen
-import com.example.composejsonviewer.ui.screen.home.HomeScreen
+import com.edgecasedesigns.androidsampleapp.ui.screen.detail.DetailScreen
+import com.edgecasedesigns.androidsampleapp.ui.screen.home.HomeScreen
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {

@@ -1,9 +1,9 @@
-package com.example.composejsonviewer.ui.screen.home
+package com.edgecasedesigns.androidsampleapp.ui.screen.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.composejsonviewer.data.model.Item
-import com.example.composejsonviewer.data.remote.Repository
+import com.edgecasedesigns.androidsampleapp.data.model.Item
+import com.edgecasedesigns.androidsampleapp.data.remote.Repository
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
 import kotlinx.coroutines.delay

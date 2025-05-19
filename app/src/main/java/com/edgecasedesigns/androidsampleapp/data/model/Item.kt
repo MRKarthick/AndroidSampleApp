@@ -1,4 +1,4 @@
-package com.example.composejsonviewer.data.model
+package com.edgecasedesigns.androidsampleapp.data.model
 
 data class Item(
     val id: Int,

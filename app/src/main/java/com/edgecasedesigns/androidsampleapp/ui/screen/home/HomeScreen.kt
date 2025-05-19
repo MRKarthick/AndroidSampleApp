@@ -1,21 +1,19 @@
-package com.example.composejsonviewer.ui.screen.home
+package com.edgecasedesigns.androidsampleapp.ui.screen.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.edgecasedesigns.androidsampleapp.ui.components.LoadingScreen
 import com.edgecasedesigns.androidsampleapp.ui.components.itemsWithDividers
-import com.example.composejsonviewer.data.model.Item
+import com.edgecasedesigns.androidsampleapp.data.model.Item
 
 @Composable
 fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewModel()) {
