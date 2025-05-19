@@ -2,4 +2,20 @@
 <resources>
 
     <style name="Theme.AndroidSampleApp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- Splash screen theme -->
+    <style name="Theme.AndroidSampleApp.Splash" parent="Theme.SplashScreen">
+        <!-- Background color for splash screen -->
+        <item name="windowSplashScreenBackground">@color/catch_design_red</item>
+
+        <!-- Icon shown in splash -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+
+        <!-- Icon animation duration -->
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- Optional: Icon background color -->
+        <item name="postSplashScreenTheme">@style/Theme.AndroidSampleApp</item>
+    </style>
 </resources>
+
