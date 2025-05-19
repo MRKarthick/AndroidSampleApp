@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.edgecasedesigns.androidsampleapp.ui.components.LoadingIndicator // Your custom indicator
+import com.edgecasedesigns.androidsampleapp.ui.components.LoadingIndicator
 import com.edgecasedesigns.androidsampleapp.ui.components.itemsWithDividers
 import com.edgecasedesigns.androidsampleapp.data.model.Item
 import com.edgecasedesigns.androidsampleapp.ui.components.LoadingScreen
@@ -41,7 +41,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
         PullToRefreshBox(
             modifier = Modifier.fillMaxSize(),
             state = pullToRefreshState,
-            isRefreshing = isRefreshing, // 🔄 Correct flag
+            isRefreshing = isRefreshing,
             onRefresh = onRefresh,
             indicator = {
                 if (isRefreshing) {
