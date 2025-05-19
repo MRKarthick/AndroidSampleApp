@@ -29,7 +29,6 @@ class HomeViewModel : ViewModel() {
         isLoading = true
         viewModelScope.launch {
             try {
-                delay(2000) // I have delay for demoing the loading screen.
                 items = repository.getItems()
             } catch (e: Exception) {
                 e.printStackTrace()
