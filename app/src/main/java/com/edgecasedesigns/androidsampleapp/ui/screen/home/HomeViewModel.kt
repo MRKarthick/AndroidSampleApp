@@ -14,26 +14,32 @@ class HomeViewModel : ViewModel() {
     var items by mutableStateOf<List<Item>>(emptyList())
         private set
 
-    var isLoading by mutableStateOf(true)
+    var isLoading by mutableStateOf(false)
+        private set
+
+    var isRefreshing by mutableStateOf(false)    // for pull-to-refresh
         private set
 
     init {
-        loadItems()
+        isLoading = true
+        loadItems(2000)
     }
 
     fun refresh() {
-        loadItems()
+        isRefreshing = true
+        loadItems(2000)
     }
 
-    private fun loadItems() {
-        isLoading = true
+    private fun loadItems(delayTime: Long = 0) {
         viewModelScope.launch {
             try {
+                delay(delayTime)
                 items = repository.getItems()
             } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
                 isLoading = false
+                isRefreshing = false
             }
         }
     }
