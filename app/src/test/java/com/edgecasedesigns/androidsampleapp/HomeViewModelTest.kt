@@ -9,29 +9,33 @@ import org.junit.Test
 
 class HomeViewModelTest {
 
-    private lateinit var viewModel: HomeViewModel
     private val testDispatcher = StandardTestDispatcher()
 
     @Before
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        viewModel = HomeViewModel(FakeRepository())
     }
 
     @Test
     fun `initial state shows loading then loads items`() = runTest {
-        assertTrue(viewModel.isLoading)
+        val viewModel = HomeViewModel(FakeRepository())
+
+        assertTrue(viewModel.isLoading) // Coroutine is scheduled but not run
         advanceUntilIdle()
+
         assertFalse(viewModel.isLoading)
         assertEquals(2, viewModel.items.size)
     }
 
     @Test
     fun `refresh updates items and isRefreshing flag`() = runTest {
+        val viewModel = HomeViewModel(FakeRepository())
         advanceUntilIdle()
+
         viewModel.refresh()
         assertTrue(viewModel.isRefreshing)
         advanceUntilIdle()
+
         assertFalse(viewModel.isRefreshing)
         assertEquals(2, viewModel.items.size)
     }
