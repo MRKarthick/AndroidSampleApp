@@ -3,7 +3,6 @@ package com.edgecasedesigns.androidsampleapp.ui.screen.detail
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,6 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.edgecasedesigns.androidsampleapp.ui.screen.home.HomeViewModel
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.edgecasedesigns.androidsampleapp.data.model.Item
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -50,4 +52,36 @@ fun DetailScreen(
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DetailScreenPreview() {
+    val navController = rememberNavController()
+    val previewViewModel = HomeViewModel().apply {
+        setPreviewData(
+            items = listOf(
+                Item(
+                    id = 1,
+                    title = "Sample Title 1",
+                    subtitle = "Sample Subtitle 1",
+                    content = "This is the detailed content of item 1 for preview."
+                ),
+                Item(
+                    id = 2,
+                    title = "Sample Title 2",
+                    subtitle = "Sample Subtitle 2",
+                    content = "This is the detailed content of item 2 for preview."
+                )
+            ),
+            isLoading = false,
+            isRefreshing = false
+        )
+    }
+
+    DetailScreen(
+        navController = navController,
+        itemId = 1,
+        viewModel = previewViewModel
+    )
 }
