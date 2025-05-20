@@ -63,4 +63,9 @@ dependencies {
     implementation(libs.moshi.converter)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.google.material)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.core.testing)
 }

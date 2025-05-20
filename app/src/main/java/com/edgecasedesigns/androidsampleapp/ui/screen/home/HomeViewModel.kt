@@ -8,16 +8,14 @@ import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
 import kotlinx.coroutines.delay
 
-class HomeViewModel : ViewModel() {
-    private val repository = Repository()
-
+class HomeViewModel(private val repository: Repository = Repository()) : ViewModel() {
     var items by mutableStateOf<List<Item>>(emptyList())
         private set
 
     var isLoading by mutableStateOf(false)
         private set
 
-    var isRefreshing by mutableStateOf(false)    // for pull-to-refresh
+    var isRefreshing by mutableStateOf(false)
         private set
 
     init {
@@ -44,3 +42,4 @@ class HomeViewModel : ViewModel() {
         }
     }
 }
+
