@@ -3,12 +3,13 @@ package com.edgecasedesigns.androidsampleapp.ui.screen.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.edgecasedesigns.androidsampleapp.data.model.Item
-import com.edgecasedesigns.androidsampleapp.data.remote.Repository
+import com.edgecasedesigns.androidsampleapp.data.remote.ItemRepository
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
+import com.edgecasedesigns.androidsampleapp.data.remote.Repository
 import kotlinx.coroutines.delay
 
-class HomeViewModel(private val repository: Repository = Repository()) : ViewModel() {
+class HomeViewModel(private val repository: ItemRepository = Repository()) : ViewModel() {
     var items by mutableStateOf<List<Item>>(emptyList())
         private set
 
@@ -42,4 +43,3 @@ class HomeViewModel(private val repository: Repository = Repository()) : ViewMod
         }
     }
 }
-
