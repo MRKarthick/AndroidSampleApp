@@ -12,14 +12,20 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.edgecasedesigns.androidsampleapp.ui.components.LoadingIndicator
 import com.edgecasedesigns.androidsampleapp.ui.components.itemsWithDividers
 import com.edgecasedesigns.androidsampleapp.data.model.Item
+import com.edgecasedesigns.androidsampleapp.data.remote.ItemRepository
 import com.edgecasedesigns.androidsampleapp.ui.components.LoadingScreen
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 @Composable
 fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewModel()) {
@@ -77,4 +83,29 @@ fun ListItem(item: Item, onClick: () -> Unit) {
             Icon(Icons.Default.ChevronRight, contentDescription = "Navigate")
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    val navController = rememberNavController()
+
+    // Fake repository for preview data
+    val fakeRepository = object : ItemRepository {
+        override suspend fun getItems(): List<Item> = listOf(
+            Item(1, "Sample Title 1", "Sample Subtitle 1", "Sample Content 1"),
+            Item(2, "Sample Title 2", "Sample Subtitle 2", "Sample Content 2")
+        )
+    }
+
+    // Creating my ViewModel instance manually as preview is not support lifecycle
+    val previewViewModel = HomeViewModel(fakeRepository).apply {
+        setPreviewData(
+            items = runBlocking { fakeRepository.getItems() },
+            isLoading = false,
+            isRefreshing = false
+        )
+    }
+
+    HomeScreen(navController = navController, viewModel = previewViewModel)
 }

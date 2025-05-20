@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import com.edgecasedesigns.androidsampleapp.data.remote.Repository
 import kotlinx.coroutines.delay
 
-class HomeViewModel(private val repository: ItemRepository = Repository()) : ViewModel() {
+open class HomeViewModel(private val repository: ItemRepository = Repository()) : ViewModel() {
     var items by mutableStateOf<List<Item>>(emptyList())
         private set
 
@@ -41,5 +41,16 @@ class HomeViewModel(private val repository: ItemRepository = Repository()) : Vie
                 isRefreshing = false
             }
         }
+    }
+
+    // I have Added this helper method for preview and testing
+    internal fun setPreviewData(
+        items: List<Item>,
+        isLoading: Boolean = false,
+        isRefreshing: Boolean = false
+    ) {
+        this.items = items
+        this.isLoading = isLoading
+        this.isRefreshing = isRefreshing
     }
 }
