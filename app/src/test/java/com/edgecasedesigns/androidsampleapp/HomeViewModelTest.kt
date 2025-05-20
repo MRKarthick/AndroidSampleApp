@@ -20,7 +20,7 @@ class HomeViewModelTest {
     fun `initial state shows loading then loads items`() = runTest {
         val viewModel = HomeViewModel(FakeRepository())
 
-        assertTrue(viewModel.isLoading) // Coroutine is scheduled but not run
+        assertTrue(viewModel.isLoading)
         advanceUntilIdle()
 
         assertFalse(viewModel.isLoading)
