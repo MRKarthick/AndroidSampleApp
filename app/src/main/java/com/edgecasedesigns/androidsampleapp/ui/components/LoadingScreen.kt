@@ -28,7 +28,7 @@ fun LoadingScreen() {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f), // This Box will take the remaining vertical space
+                .weight(1f),
             contentAlignment = Alignment.Center
         ) {
             Image(

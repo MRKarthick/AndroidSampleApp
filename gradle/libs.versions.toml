@@ -16,6 +16,7 @@ mockito = "4.11.0"
 mockito-kotlin = "4.1.0"
 core-testing = "2.2.0"
 kotlinx-test = "1.7.3"
+uiTestJunit4Android = "1.8.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,6 +47,8 @@ mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
 core-testing = { module = "androidx.arch.core:core-testing", version.ref = "core-testing" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-test" }
+navigationTesting = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationRuntimeAndroid" }
+androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

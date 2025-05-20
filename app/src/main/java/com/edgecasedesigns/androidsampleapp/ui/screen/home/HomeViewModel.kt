@@ -21,14 +21,15 @@ open class HomeViewModel(private val repository: ItemRepository = Repository()) 
 
     init {
         isLoading = true
-        loadItems(2000)
+        loadItems()
     }
 
     fun refresh() {
         isRefreshing = true
-        loadItems(2000)
+        loadItems()
     }
 
+    // Adding delay for testing purposes. can set to 3000 or something to see the loading screen for brief 3 seconds
     private fun loadItems(delayTime: Long = 0) {
         viewModelScope.launch {
             try {
