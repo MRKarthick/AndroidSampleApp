@@ -3,9 +3,7 @@ package com.edgecasedesigns.androidsampleapp
 import com.edgecasedesigns.androidsampleapp.data.model.Item
 import com.edgecasedesigns.androidsampleapp.data.remote.Repository
 import com.edgecasedesigns.androidsampleapp.ui.screen.home.HomeViewModel
-
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*
 import org.junit.Assert.*
 import org.junit.Before
